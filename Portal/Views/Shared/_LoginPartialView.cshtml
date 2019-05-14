@@ -1,0 +1,17 @@
+﻿<ul class="nav navbar-nav navbar-right">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li>
+            <a asp-controller="Account" asp-action="ChangePassword">Сменить пароль</a>
+        </li>
+        <li>
+            <a asp-controller="Account" asp-action="Logout">Выйти</a>
+        </li>
+    }
+    else
+    {
+        <li>
+            <a asp-controller="Account" asp-action="Login">Вход</a>
+        </li>
+    }
+</ul>

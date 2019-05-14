@@ -1,0 +1,47 @@
+﻿@inject IAuthorizationService AuthorizationService
+@using Microsoft.AspNetCore.Authorization
+@model List<Portal.ViewModels.HeadViewModel>
+@{
+    ViewData["Title"] = "Руководители";
+}
+
+<h2>Управление</h2>
+<h4>Руководителями</h4>
+<hr/>
+
+<div class="row">
+    <div class="col-md-10">
+
+        <section>
+                <div class="form-group">
+                    <a asp-controller="Heads" asp-action="Create" class="btn btn-default" role="button" aria-pressed="true">Добавить руководителя</a>
+                </div>
+            <table class="table">
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамиилия</th>
+                    <th>Почта</th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Surname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            <a asp-controller="Heads" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-default" role="button" aria-pressed="true">Изменить</a>
+                            <a  asp-controller="Heads" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-default" role="button" aria-pressed="true">Удалить</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </section>
+    </div>
+</div>

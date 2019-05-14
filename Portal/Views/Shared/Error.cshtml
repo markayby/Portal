@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model Portal.ViewModels.ErrorViewModel
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div style="margin-top: 50px">
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="text-danger">@Localizer["PageTitle"]</h1>
+            <h2 class="text-danger">@Model.MessageForClient</h2>
+        </div>
+    </div>
+</div>

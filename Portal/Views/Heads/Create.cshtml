@@ -1,0 +1,45 @@
+﻿@model Portal.ViewModels.HeadViewModel
+
+@{
+    ViewBag.Title = "Добавление руководителя";
+}
+
+
+<h2>Добавление руководителя</h2>
+<hr/>
+
+<div class="clearfix">
+    <div class="col-md-4">
+        <section>
+            <form asp-action="Create" asp-controller="Heads" asp-anti-forgery="true">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="Id" type="hidden" />
+                <div class="form-group row">
+                    <label asp-for="Name">Имя</label>
+                    <input asp-for="Name" class="form-control"/>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Surname">Фамилия</label>
+                    <input asp-for="Surname" class="form-control"/>
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Email">Почта</label>
+                    <input asp-for="Email" class="form-control"/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <input type="submit" value="Добавить" class="btn btn-default"/>
+                    <a asp-controller="Heads" asp-action="Index" class="btn btn-default" role="button" aria-pressed="true">Назад</a>
+                </div>
+            </form>
+
+        </section>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}
