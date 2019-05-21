@@ -66,7 +66,7 @@ using Portal.ViewModels;
             WriteLiteral("        <li>\r\n            ");
             EndContext();
             BeginContext(116, 74, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc9c0e2f52034f29b1f83818a74f9386", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83b75eb00a2742a7913b7c97cc6e0d93", async() => {
                 BeginContext(172, 14, true);
                 WriteLiteral("Сменить пароль");
                 EndContext();
@@ -90,7 +90,7 @@ using Portal.ViewModels;
             WriteLiteral("\r\n        </li>\r\n        <li>\r\n            ");
             EndContext();
             BeginContext(233, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e3d3988716a749d1b869cd760b231a52", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0ef1a36103c4326b4de577fa3916460", async() => {
                 BeginContext(281, 5, true);
                 WriteLiteral("Выйти");
                 EndContext();
@@ -124,7 +124,7 @@ using Portal.ViewModels;
             WriteLiteral("        <li>\r\n            ");
             EndContext();
             BeginContext(357, 55, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02c4e473a40740d88735d7f5f1f6403a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6eb5a9b5e154200a53a105d2f61463b", async() => {
                 BeginContext(404, 4, true);
                 WriteLiteral("Вход");
                 EndContext();

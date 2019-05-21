@@ -28,13 +28,13 @@
                 </button>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    if (User.IsInRole("Basic"))
+                    if (User.IsInRole("Employee") || User.IsInRole("Head"))
                     {
-                        <a asp-controller="Home" asp-action="Index" class="navbar-brand">Портал</a>
+                        <a asp-controller="Users" asp-action="Index" class="navbar-brand">Портал</a>
                     }
                     else if (User.IsInRole("Admin"))
                     {
-                        <a asp-controller="Employees" asp-action="Index" class="navbar-brand">Портал</a>
+                        <a asp-controller="Admins" asp-action="Index" class="navbar-brand">Портал</a>
                     }
                 }
                 else
@@ -44,11 +44,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                     {
-                         <li><a asp-controller="Employees" asp-action="Index">Сотрудники</a></li>
-                         <li><a asp-controller="Heads" asp-action="Index">Руководители</a></li>
-                     }
+@*                      @if (User.Identity.IsAuthenticated && User.IsInRole("Admin")) *@
+@*                      { *@
+@*                          <li><a asp-controller="Employees" asp-action="Index">Сотрудники</a></li> *@
+@*                          <li><a asp-controller="Users" asp-action="Index">Руководители</a></li> *@
+                    @*                      } *@
+                    Menu
                 </ul>
                 <partial name="_LoginPartialView"/>
             </div>

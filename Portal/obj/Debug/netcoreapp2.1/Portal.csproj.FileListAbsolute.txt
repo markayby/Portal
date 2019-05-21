@@ -36,6 +36,7 @@ C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Portal.Views.pdb
 C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Portal.csproj.CopyComplete
 C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Razor\Views\Employees\Index.g.cshtml.cs
 C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Portal.Resources.Controllers.HeadsController.resources
-C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Razor\Views\Heads\Create.g.cshtml.cs
-C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Razor\Views\Heads\Edit.g.cshtml.cs
-C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Razor\Views\Heads\Index.g.cshtml.cs
+C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Index.g.cshtml.cs
+C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Razor\Views\Users\Create.g.cshtml.cs
+C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Razor\Views\Users\Edit.g.cshtml.cs
+C:\projects\portal\Portal\Portal\obj\Debug\netcoreapp2.1\Razor\Views\Users\Index.g.cshtml.cs

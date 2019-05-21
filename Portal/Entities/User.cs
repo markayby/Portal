@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Portal.Entities
 {
@@ -9,8 +10,25 @@ namespace Portal.Entities
         
         public string Password { get; set; }
         
+        [MaxLength(120)]
+        public string Name { get; set; }
+        
+        [MaxLength(120)]
+        public string Surname { get; set; }
+        
+        [MaxLength(120)]
+        public string Position { get; set; }
+        
+        [Phone]
+        public string Phone { get; set; }
+        
+        [EmailAddress]
+        public string Email { get; set; }
+        
         public long RoleId { get; set; }
         
         public Role Role { get; set; }
+        
+        public ICollection<Comment> Comments { get; set; }
     }
 }

@@ -14,7 +14,7 @@
 
         <section>
                 <div class="form-group">
-                    <a asp-controller="Heads" asp-action="Create" class="btn btn-default" role="button" aria-pressed="true">Добавить руководителя</a>
+                    <a asp-controller="Users" asp-action="Create" class="btn btn-default" role="button" aria-pressed="true">Добавить руководителя</a>
                 </div>
             <table class="table">
                 <tr>
@@ -36,8 +36,8 @@
                             @Html.DisplayFor(modelItem => item.Email)
                         </td>
                         <td>
-                            <a asp-controller="Heads" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-default" role="button" aria-pressed="true">Изменить</a>
-                            <a  asp-controller="Heads" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-default" role="button" aria-pressed="true">Удалить</a>
+                            <a asp-controller="Users" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-default" role="button" aria-pressed="true">Изменить</a>
+                            <a  asp-controller="Users" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-default" role="button" aria-pressed="true">Удалить</a>
                         </td>
                     </tr>
                 }

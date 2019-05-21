@@ -18,12 +18,15 @@
         <e p="bundleconfig.json" t="Include" />
         <e p="Controllers" t="Include">
           <e p="AccountController.cs" t="Include" />
+          <e p="AdminsController.cs" t="Include" />
           <e p="BaseContoller.cs" t="Include" />
-          <e p="EmployeesController.cs" t="Include" />
-          <e p="HeadsController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
+          <e p="UsersController.cs" t="Include" />
         </e>
         <e p="Core" t="Include">
+          <e p="Types" t="Include">
+            <e p="RequestTypeEnum.cs" t="Include" />
+          </e>
           <e p="Validation" t="Include">
             <e p="CustomValidationMetadataProvider.cs" t="Include" />
           </e>
@@ -31,8 +34,8 @@
         <e p="Entities" t="Include">
           <e p="ApplicationDbContext.cs" t="Include" />
           <e p="BaseEntity.cs" t="Include" />
-          <e p="Employee.cs" t="Include" />
-          <e p="Head.cs" t="Include" />
+          <e p="Comment.cs" t="Include" />
+          <e p="Request.cs" t="Include" />
           <e p="Role.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>
@@ -45,12 +48,8 @@
           <e p="log-20190514.txt" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20181012075534_dev.cs" t="Include" />
-          <e p="20181012075534_dev.Designer.cs" t="Include" />
-          <e p="20181012082507_dev2.cs" t="Include" />
-          <e p="20181012082507_dev2.Designer.cs" t="Include" />
-          <e p="20181012122501_dev4.cs" t="Include" />
-          <e p="20181012122501_dev4.Designer.cs" t="Include" />
+          <e p="20190521114250_mgrn0.cs" t="Include" />
+          <e p="20190521114250_mgrn0.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -94,12 +93,10 @@
             <e p="ChangePassword.cshtml" t="Include" />
             <e p="Login.cshtml" t="Include" />
           </e>
-          <e p="Employees" t="Include">
+          <e p="Admins" t="Include">
             <e p="Index.cshtml" t="Include" />
           </e>
-          <e p="Heads" t="Include">
-            <e p="Create.cshtml" t="Include" />
-            <e p="Edit.cshtml" t="Include" />
+          <e p="Employees" t="Include">
             <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Home" t="Include">
@@ -110,6 +107,11 @@
             <e p="_LoginPartialView.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
+          </e>
+          <e p="Users" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
           </e>
         </e>
         <e p="wwwroot" t="Include">

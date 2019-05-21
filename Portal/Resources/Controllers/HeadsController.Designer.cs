@@ -39,7 +39,7 @@ namespace Portal.Resources.Controllers {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Portal.Resources.Controllers.HeadsController", typeof(HeadsController).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Portal.Resources.Controllers.UsersController", typeof(HeadsController).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

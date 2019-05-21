@@ -33,7 +33,7 @@ namespace Portal.Controllers
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Users");
             }
 
             return View();
@@ -129,7 +129,7 @@ namespace Portal.Controllers
         private IActionResult ChooseHomePage(string role)
         {
             return string.Equals(role, "Admin") 
-                ? RedirectToAction("Index", "Employees") 
+                ? RedirectToAction("Index", "Users") 
                 :RedirectToAction("Index", "Home");
         }
     }

@@ -10,7 +10,9 @@ namespace Portal.Entities
 
         public DbSet<Role> Roles { get; set; }
 
-        public DbSet<Head> Heads { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        
+        public DbSet<Request> Requests { get; set; }
         
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -20,24 +22,27 @@ namespace Portal.Entities
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<User>(entity => { entity.HasIndex(e => e.Login).IsUnique(); });
-            
-            builder.Entity<Head>().HasKey(h => h.Email);
 
-            builder.Entity<User>()
-                .HasOne(u => u.Role)
-                .WithMany(r => r.Users)
-                .HasForeignKey(u => u.RoleId);
+//            builder.Entity<User>()
+//                .HasOne(u => u.Role)
+//                .WithMany(r => r.Users)
+//                .HasForeignKey(u => u.RoleId);
 
             builder.Entity<Role>()
                 .HasData(new Role
                     {
-                        Id = 2,
-                        Name = "Basic",
+                        Id = 3,
+                        Name = "Employee"
                     },
                     new Role
                     {
                         Id = 1,
-                        Name = "Admin",
+                        Name = "Admin"
+                    },
+                    new Role
+                    {
+                        Id = 2,
+                        Name = "Head"
                     });
 
             builder.Entity<User>()
@@ -47,13 +52,6 @@ namespace Portal.Entities
                         Login = "admin",
                         Password = Crypto.HashPassword("admin"),
                         RoleId = 1,
-                    },
-                    new User
-                    {
-                        Id = 2,
-                        Login = "user",
-                        Password = Crypto.HashPassword("user"),
-                        RoleId = 2,
                     });
             
             foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
