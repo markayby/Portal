@@ -42,6 +42,7 @@
           <e p="log-20190102.txt" t="Include" />
           <e p="log-20190103.txt" t="Include" />
           <e p="log-20190326.txt" t="Include" />
+          <e p="log-20190514.txt" t="Include" />
         </e>
         <e p="Migrations" t="Include">
           <e p="20181012075534_dev.cs" t="Include" />
