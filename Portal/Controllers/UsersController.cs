@@ -11,7 +11,7 @@ using Portal.ViewModels;
 
 namespace Portal.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Employee, Head")]
     public class UsersController : BaseContoller
     {
         private readonly ApplicationDbContext _applicationDbContext;
@@ -56,6 +56,11 @@ namespace Portal.Controllers
         public IActionResult Delete()
         {
             throw new System.NotImplementedException();
+        }
+
+        public IActionResult ProcessesRequest()
+        {
+            return View();
         }
     }
 }

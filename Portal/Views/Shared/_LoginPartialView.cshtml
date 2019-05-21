@@ -1,8 +1,21 @@
 ﻿<ul class="nav navbar-nav navbar-right">
     @if (User.Identity.IsAuthenticated)
     {
+        if (User.IsInRole("Admin"))
+        {
+            <li>
+                <a asp-controller="Admins" asp-action="UsersDetails">Информация о пользователях</a>
+            </li>
+        }
+        else if (User.IsInRole("Head"))
+        {
+            <li>
+                <a asp-controller="Users" asp-action="ProcessesRequest">Информация о пользователях</a>
+            </li>
+        }
+        
         <li>
-            <a asp-controller="Account" asp-action="ChangePassword">Сменить пароль</a>
+            <a asp-controller="Account" asp-action="Logout">Выйти</a>
         </li>
         <li>
             <a asp-controller="Account" asp-action="Logout">Выйти</a>
