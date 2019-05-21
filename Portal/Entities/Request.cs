@@ -21,5 +21,9 @@ namespace Portal.Entities
         public string OptionalEmail { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
+
+        public RequestStatusEnum Status { get; set; }
+
+        public bool Completed { get; set; }
     }
 }

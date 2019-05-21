@@ -26,18 +26,27 @@ namespace Portal.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-//            var heads = await _applicationDbContext.Heads.ToListAsync();
-//
-//            var result = heads.Select(s => new HeadViewModel
-//            {
-//                Id = s.Id,
-//                Name = s.Name,
-//                Surname = s.Surname,
-//                Email = s.Email,
-//            });
-//
-//            return View(result.ToList());
-            return View();
+            var currentUser = User.Identity.Name;
+            
+            var requests  = await _applicationDbContext.Requests
+                .AsNoTracking()
+                .Where(i => i.Employee.Login.Equals(currentUser))
+                .Include(i => i.Heads)
+                .ToListAsync();
+
+            var result = requests.Select(s => new HistoryRequestViewModel
+            {
+                Id = s.Id,
+                Employee = $"{s.Employee.Name} {s.Employee.Name}",
+                Completed = s.Completed? "yes": "no",
+                Status = s.Status.ToString(),
+                Type = s.Type.ToString(),
+                DateFrom = s.DateFrom,
+                DateTo = s.DateTo,
+                Heads = string.Join(',' ,s.Heads),
+            });
+
+            return View(result.ToList());
         }
 
         [HttpGet]
