@@ -7,8 +7,13 @@ namespace Portal.Controllers
         // GET
         public IActionResult Index()
         {
-            return
-            View();
+            return View();
+        }
+        
+        [HttpGet]
+        public IActionResult UsersDetails()
+        {
+            return View();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Portal.ViewModels;
@@ -31,12 +30,10 @@ namespace Portal.Controllers
         [AllowAnonymous]
         public IActionResult Login()
         {
-            if (HttpContext.User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Index", "Users");
-            }
-
-            return View();
+            if (!HttpContext.User.Identity.IsAuthenticated) 
+                return View();
+         
+            return RedirectToAction("Index", HttpContext.User.IsInRole("Admin") ? "Admins" : "Users");
         }
 
         [HttpPost]
@@ -91,46 +88,23 @@ namespace Portal.Controllers
             
             return RedirectToAction("Login", "Account");
         }
-        
-        [HttpGet]
-        public IActionResult ChangePassword()
-        {
-            var model = new ChangePasswordViewModel();
-
-            return View(model);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel viewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                var currentUserName = User.Identity.Name;
-                var user = db.Users
-                    .Include(u => u.Role)
-                    .FirstOrDefault(s => s.Login == currentUserName);
-                if (user == null)
-                {
-                    return NotFound();
-                }
-                
-                var userRole = user.Role?.Name;
-                
-                user.Password = Crypto.HashPassword(viewModel.Password);
-                await db.SaveChangesAsync();
-
-                return ChooseHomePage(userRole);
-            }
-
-            return View(viewModel);
-        }
 
         private IActionResult ChooseHomePage(string role)
         {
             return string.Equals(role, "Admin") 
-                ? RedirectToAction("Index", "Users") 
-                :RedirectToAction("Index", "Home");
+                ? RedirectToAction("Index", "Admins") 
+                :RedirectToAction("Index", "Users");
+        }
+        
+        [AllowAnonymous]
+        [Route("account/register")]
+        public IActionResult Register()
+        {
+            if (!HttpContext.User.Identity.IsAuthenticated) 
+                return View();
+         
+            return RedirectToAction("Index", HttpContext.User.IsInRole("Admin") ? "Admins" : "Users");
+         
         }
     }
 }

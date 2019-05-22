@@ -15,7 +15,7 @@ namespace Portal.Controllers
             _localizer = localizer;
         }
         
-        [Authorize(Roles = "Basic")]
+        [Authorize(Roles = "Admin, Employee, Head")]
         public IActionResult Index()
         {
             return View();
