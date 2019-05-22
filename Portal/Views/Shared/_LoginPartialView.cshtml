@@ -10,19 +10,18 @@
         else if (User.IsInRole("Head"))
         {
             <li>
-                <a asp-controller="Users" asp-action="ProcessesRequest">Информация о пользователях</a>
+                <a asp-controller="Users" asp-action="ProcessesRequest">Запросы</a>
             </li>
         }
-        
-        <li>
-            <a asp-controller="Account" asp-action="Logout">Выйти</a>
-        </li>
         <li>
             <a asp-controller="Account" asp-action="Logout">Выйти</a>
         </li>
     }
     else
     {
+        <li>
+            <a asp-controller="Account" asp-action="Register">Регистрация</a>
+        </li>
         <li>
             <a asp-controller="Account" asp-action="Login">Вход</a>
         </li>

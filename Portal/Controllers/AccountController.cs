@@ -95,5 +95,16 @@ namespace Portal.Controllers
                 ? RedirectToAction("Index", "Admins") 
                 :RedirectToAction("Index", "Users");
         }
+        
+        [AllowAnonymous]
+        [Route("account/register")]
+        public IActionResult Register()
+        {
+            if (!HttpContext.User.Identity.IsAuthenticated) 
+                return View();
+         
+            return RedirectToAction("Index", HttpContext.User.IsInRole("Admin") ? "Admins" : "Users");
+         
+        }
     }
 }
